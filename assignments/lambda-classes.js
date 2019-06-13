@@ -64,3 +64,43 @@ class ProjectManager extends Instructor {
         return `${this.name} debugs ${student.name}'s code on ${subject}`;
     } 
 }
+
+/////////////////////////////////// PERSON OBJECTS
+
+const joe = new Person({
+    name: 'Joe',
+    age: 25,
+    location: 'San Francisco'
+})
+
+const mark = new Person({
+    name: 'Joe',
+    age: 32,
+    location: 'Baltimore'
+})
+
+const chris = new Person({
+    name: 'Joe',
+    age: 58,
+    location: 'Orlando'
+})
+
+/////////////////////////////////// INSTRUCTOR OBJECTS
+
+const scottI = new Instructor({
+    name: 'Scott',
+    age: 28,
+    location: 'Santa Cruz',
+    specialty: 'User Experience',
+    favLanguage: 'CSS',
+    catchPhrase: 'Never judge a website by its functionality!'
+})
+
+const bruceI = new Instructor({
+    name: 'Bruce',
+    age: 33,
+    location: 'San Jose',
+    specialty: 'Back-end',
+    favLanguage: 'PHP',
+    catchPhrase: 'Numbers 4 dayzzz!'
+})
