@@ -48,3 +48,19 @@ class Student extends Person {
         return `${this.name} has begun sprint challenge on ${subject}`;
     }
 }
+
+class ProjectManager extends Instructor {
+    constructor(atts) {
+        super(atts);
+        this.gradClassName = atts.gradClassName;
+        this.favInstructor = atts.favInstructor;
+    }
+
+    standUp(channel) {
+        return `${this.name} announces to ${channel}, @channel standy times!`;
+    }
+
+    debugsCode(student, subject) {
+        return `${this.name} debugs ${student.name}'s code on ${subject}`;
+    } 
+}
