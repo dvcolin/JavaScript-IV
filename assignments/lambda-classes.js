@@ -23,7 +23,7 @@ class Instructor extends Person{
         return `Today we are learning about ${subject}`;
     }
 
-    grade(student) {
+    grade(student, subject) {
         return `${student.name} receives a perfect score on ${subject}`;
     }
 }
@@ -67,19 +67,19 @@ class ProjectManager extends Instructor {
 
 /////////////////////////////////// PERSON OBJECTS
 
-const joe = new Person({
+const joePerson = new Person({
     name: 'Joe',
     age: 25,
     location: 'San Francisco'
 })
 
-const mark = new Person({
+const markPerson = new Person({
     name: 'Joe',
     age: 32,
     location: 'Baltimore'
 })
 
-const chris = new Person({
+const chrisPerson = new Person({
     name: 'Joe',
     age: 58,
     location: 'Orlando'
@@ -87,7 +87,7 @@ const chris = new Person({
 
 /////////////////////////////////// INSTRUCTOR OBJECTS
 
-const scottI = new Instructor({
+const scottInstructor = new Instructor({
     name: 'Scott',
     age: 28,
     location: 'Santa Cruz',
@@ -96,7 +96,7 @@ const scottI = new Instructor({
     catchPhrase: 'Never judge a website by its functionality!'
 })
 
-const bruceI = new Instructor({
+const bruceInstructor = new Instructor({
     name: 'Bruce',
     age: 33,
     location: 'San Jose',
@@ -108,48 +108,59 @@ const bruceI = new Instructor({
 
 /////////////////////////////////// STUDENT OBJECTS
 
-const jimS = new Student({
+const jimStudent = new Student({
     name: 'Joe',
     age: 58,
     location: 'Pittsburgh',
     previousBackground: 'University',
     className: 'WEB21',
-    favSubjects: 'React and Node.js'
+    favSubjects: ['React', 'Node.js']
 })
 
-const tessaS = new Student({
+const tessaStudent = new Student({
     name: 'Tessa',
     age: 22,
     location: 'Salt Lake City',
     previousBackground: 'Retail',
     className: 'WEB21',
-    favSubjects: 'CSS and Python'
+    favSubjects: ['CSS', 'Python']
 })
 
 /////////////////////////////////// PROJECT MANAGER OBJECTS
 
-const pm1 = new ProjectManager({
+const samPM = new ProjectManager({
     name: 'Sam',
     age: 29,
     location: 'Nashville',
     specialty: 'Databases',
     favLanguage: 'Python',
     catchPhrase: 'Give me Python or give me death!',
-    gradClassName = 'WEB10',
+    gradClassName: 'WEB10',
     favInstructor: 'Josh Knell'
 })
 
-const pm2 = new ProjectManager({
+const rickPM = new ProjectManager({
     name: 'Rick',
     age: 57,
     location: 'Planet C-137',
     specialty: 'Traveling across dimensions',
     favLanguage: 'PHP',
     catchPhrase: 'Wubbalubadubdub!',
-    gradClassName = 'WEB16',
+    gradClassName: 'WEB16',
     favInstructor: 'Dan Levy'
 })
 
+console.log(joePerson.speak());
+console.log(chrisPerson.speak());
+
+console.log(scottInstructor.grade(tessaStudent, 'Python'));
+console.log(bruceInstructor.demo('LESS'));
+
+jimStudent.listsSubjects();
+tessaStudent.listsSubjects();
+
+console.log(samPM.debugsCode(tessaStudent, 'Node.js'));
+console.log(rickPM.standUp('WEB21'));
 
 
 
