@@ -104,3 +104,65 @@ const bruceI = new Instructor({
     favLanguage: 'PHP',
     catchPhrase: 'Numbers 4 dayzzz!'
 })
+
+
+/////////////////////////////////// STUDENT OBJECTS
+
+const jimS = new Student({
+    name: 'Joe',
+    age: 58,
+    location: 'Pittsburgh',
+    previousBackground: 'University',
+    className: 'WEB21',
+    favSubjects: 'React and Node.js'
+})
+
+const tessaS = new Student({
+    name: 'Tessa',
+    age: 22,
+    location: 'Salt Lake City',
+    previousBackground: 'Retail',
+    className: 'WEB21',
+    favSubjects: 'CSS and Python'
+})
+
+/////////////////////////////////// PROJECT MANAGER OBJECTS
+
+const pm1 = new ProjectManager({
+    name: 'Sam',
+    age: 29,
+    location: 'Nashville',
+    specialty: 'Databases',
+    favLanguage: 'Python',
+    catchPhrase: 'Give me Python or give me death!',
+    gradClassName = 'WEB10',
+    favInstructor: 'Josh Knell'
+})
+
+const pm2 = new ProjectManager({
+    name: 'Rick',
+    age: 57,
+    location: 'Planet C-137',
+    specialty: 'Traveling across dimensions',
+    favLanguage: 'PHP',
+    catchPhrase: 'Wubbalubadubdub!',
+    gradClassName = 'WEB16',
+    favInstructor: 'Dan Levy'
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
