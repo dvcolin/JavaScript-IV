@@ -1,4 +1,4 @@
-/// CODE here for your Lambda Classes
+///////////////////////////////// PERSON CLASS
 class Person {
     constructor(atts) {
         this.name = atts.name;
@@ -11,6 +11,7 @@ class Person {
     }
 }
 
+///////////////////////////////// INSTRUCTOR CLASS
 class Instructor extends Person{
     constructor(atts) {
         super(atts);
@@ -26,14 +27,23 @@ class Instructor extends Person{
     grade(student, subject) {
         return `${student.name} receives a perfect score on ${subject}`;
     }
+
+    changeGrade(student) {
+        let randomNum = Math.random();
+        randomNum >= 0.5 ? randomNum === randomNum : randomNum *= -1;
+
+        return student.grade + (10 * randomNum);
+    }
 }
 
+///////////////////////////////// STUDENT CLASS
 class Student extends Person {
     constructor(atts) {
         super(atts);
         this.previousBackground = atts.previousBackground;
         this.className = atts.className;
         this.favSubjects = atts.favSubjects;
+        this.grade = atts.grade;
     }
 
     listsSubjects() {
@@ -47,8 +57,18 @@ class Student extends Person {
     sprintChallenge(subject) {
         return `${this.name} has begun sprint challenge on ${subject}`;
     }
+
+    graduate() {
+        if(this.grade > 70) {
+            this.canGraduate = true;
+        } else {
+            this.canGraduate = false;
+        }
+        return this.canGraduate;
+    }
 }
 
+///////////////////////////////// PROJECT MANAGER CLASS
 class ProjectManager extends Instructor {
     constructor(atts) {
         super(atts);
@@ -114,7 +134,8 @@ const jimStudent = new Student({
     location: 'Pittsburgh',
     previousBackground: 'University',
     className: 'WEB21',
-    favSubjects: ['React', 'Node.js']
+    favSubjects: ['React', 'Node.js'],
+    grade: 62
 })
 
 const tessaStudent = new Student({
@@ -123,7 +144,8 @@ const tessaStudent = new Student({
     location: 'Salt Lake City',
     previousBackground: 'Retail',
     className: 'WEB21',
-    favSubjects: ['CSS', 'Python']
+    favSubjects: ['CSS', 'Python'],
+    grade: 85
 })
 
 /////////////////////////////////// PROJECT MANAGER OBJECTS
@@ -162,6 +184,13 @@ tessaStudent.listsSubjects();
 console.log(samPM.debugsCode(tessaStudent, 'Node.js'));
 console.log(rickPM.standUp('WEB21'));
 
+console.log(scottInstructor.changeGrade(tessaStudent));
+
+console.log(tessaStudent.graduate());
+console.log(tessaStudent);
+
+console.log(jimStudent.graduate());
+console.log(jimStudent);
 
 
 
