@@ -59,11 +59,7 @@ class Student extends Person {
     }
 
     graduate() {
-        if(this.grade > 70) {
-            this.canGraduate = true;
-        } else {
-            this.canGraduate = false;
-        }
+        this.grade > 70 ? this.canGraduate = true : this.canGraduate = false;
         return this.canGraduate;
     }
 }
